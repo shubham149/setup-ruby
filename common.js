@@ -48,7 +48,7 @@ export async function measure(name, block) {
 }
 
 export function isHeadVersion(rubyVersion) {
-  return ['head', 'debug',  'mingw', 'mswin', 'ucrt'].includes(rubyVersion)
+  return ['head', 'debug', 'mingw', 'mswin', 'ucrt'].includes(rubyVersion)
 }
 
 export function isStableVersion(rubyVersion) {
@@ -135,6 +135,8 @@ export const supportedPlatforms = [
 
 export function getVirtualEnvironmentName() {
   const imageOS = getImageOS()
+
+  return "ubuntu-22.04"
 
   let match = imageOS.match(/^ubuntu(\d+)/) // e.g. ubuntu18
   if (match) {
